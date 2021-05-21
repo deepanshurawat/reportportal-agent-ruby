@@ -1,3 +1,3 @@
 module ReportPortal
-  VERSION = '1.0.ocpqe'.freeze
+  VERSION = '1.0'.freeze
 end
