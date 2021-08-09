@@ -82,7 +82,8 @@ module ReportPortal
 
         return if use_same_thread_for_reporting?
 
-        sleep 0.03 while !@queue.empty? || @queue.num_waiting.zero? # TODO: how to interrupt launch if the user aborted execution
+        # TODO: how to interrupt launch if the user aborted execution
+        sleep 0.03 while !@queue.empty? || @queue.num_waiting.zero? || @thread.join(1)
         @thread.kill
       end
 
